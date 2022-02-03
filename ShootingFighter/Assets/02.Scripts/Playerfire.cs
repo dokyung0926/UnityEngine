@@ -16,11 +16,11 @@ public class Playerfire : MonoBehaviour
 
             // ============ 방법 2 : 총알을 생성 후 총구에 위치시킨다 =============
             // GameObject의 인스턴스화 :
-            GameObject tmpBullet = Instantiate(bullet);
+            // GameObject tmpBullet = Instantiate(bullet);
             // 클래스의 인스턴스화 :
             // 클래스타입 변수이름 = new 클래스생성자;
-            tmpBullet.transform.position = firePoint.position;
-            tmpBullet.transform.rotation = firePoint.rotation;
+            // tmpBullet.transform.position = firePoint.position;
+            // tmpBullet.transform.rotation = firePoint.rotation;
         }
     }
 }
