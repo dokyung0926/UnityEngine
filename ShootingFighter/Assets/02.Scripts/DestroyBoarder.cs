@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class DestroyBoarder : MonoBehaviour
 {
-    private void OnCollisonEnter(Collision collider)
+    private void OnCollisionEnter(Collision collision)
     {
-
-        if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Destroy(collider.gameObject);
-        }
+        if (collision == null) return;
+        Destroy(collision.gameObject);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4826620560201137461}
   - component: {fileID: 4826620560201137462}
   - component: {fileID: 4826620560201137463}
-  - component: {fileID: 2048579797129395891}
+  - component: {fileID: -3314284276413138403}
   m_Layer: 13
   m_Name: Enemy
   m_TagString: Untagged
@@ -109,10 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d74b1dd295c8f43a563574ed03a3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  score: 100
+  damage: 10
+  speed: 3
   destroyEffect: {fileID: 6794694172470993585, guid: 54a02e570e150d043a059b0a89caab68, type: 3}
-  AIPercent: 30
---- !u!54 &2048579797129395891
+  AIPercent: 100
+--- !u!54 &-3314284276413138403
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
