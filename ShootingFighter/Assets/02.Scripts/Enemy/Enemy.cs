@@ -1,9 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    private float _HP; 
+    public float HP
+    {
+        set
+        {
+            _HP = value;
+            int HPint = (int)value;
+            HPSlider.value = _HP / HPMax;
+            if(_HP <= 0)
+            {
+                DestroyByPlayerWeapon();
+            }
+        }
+        get
+        {
+            return _HP;
+        }
+    }
+    [SerializeField] private float HPInit;
+    [SerializeField] private float HPMax;
+    [SerializeField] private Slider HPSlider;
+
+
+
     [SerializeField] private float score;
     [SerializeField] private float damage;
     [SerializeField] private float speed;
@@ -16,7 +41,8 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        tr =gameObject.GetComponent<Transform>();    
+        tr =gameObject.GetComponent<Transform>();
+        HP = HPInit;
     }
 
 
@@ -65,28 +91,23 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            // 플레이어의 체력 감소
             Player player =collision.gameObject.GetComponent<Player>();
             player.HP -= damage;
 
-            // 파괴이펙트
             GameObject effectGO = Instantiate(destroyEffect);
             effectGO.transform.position = tr.position;
             Destroy(this.gameObject);
         }
+    }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PlayerWeapon"))
-        {
-            // todo => 파괴 이펙트
-            GameObject effectGO = Instantiate(destroyEffect);
-            effectGO.transform.position = tr.position;
-            
-            // Enemy가 총알에 의해 파괴 될 때 점수 증가
-            GameObject playerGO = GameObject.Find("Player");
-            playerGO.GetComponent<Player>().score += score;
+    public void DestroyByPlayerWeapon()
+    {
+        GameObject effectGO = Instantiate(destroyEffect);
+        effectGO.transform.position = tr.position;
 
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
+        GameObject playerGO = GameObject.Find("Player");
+        playerGO.GetComponent<Player>().score += score;
+
+        Destroy(this.gameObject);
     }
 }
