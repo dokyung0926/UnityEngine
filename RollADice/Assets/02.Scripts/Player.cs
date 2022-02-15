@@ -8,10 +8,9 @@ public class Player : MonoBehaviour
     private Transform tr;
     private void Awake()
     {
-        if (instance = null) instance = this;
+        if (instance == null) instance = this;
         tr = transform;
     }
-
     public void Move(Vector3 target)
     {
         tr.position = target;
