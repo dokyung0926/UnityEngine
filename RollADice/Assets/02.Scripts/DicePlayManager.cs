@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class DicePlayManager : MonoBehaviour
 {
     static public DicePlayManager instance;
@@ -25,7 +24,7 @@ public class DicePlayManager : MonoBehaviour
     {
         set
         {
-            _goldenDiceNum = value;
+             _goldenDiceNum = value;
             goldenDiceNumText.text = _goldenDiceNum.ToString();
         }
         get
@@ -41,7 +40,7 @@ public class DicePlayManager : MonoBehaviour
     public Text diceNumText;
     public Text goldenDiceNumText;
 
-    public int _starScore;
+    private int _starScore;
     public int starScore
     {
         set
@@ -55,17 +54,16 @@ public class DicePlayManager : MonoBehaviour
         }
     }
     public Text starScoreText;
-
     private void Awake()
     {
         instance = this;
         diceNum = diceNumInit;
         goldenDiceNum = goldenDiceNumInit;
     }
-
     public void RollADice()
     {
         if (diceNum < 1) return;
+
         diceNum--;
         int diceValue = Random.Range(1, 7);
         diceValueText.text = diceValue.ToString();
@@ -74,10 +72,11 @@ public class DicePlayManager : MonoBehaviour
     public void RollADiceInverse()
     {
         if (diceNum < 1) return;
+
         diceNum--;
         int diceValue = Random.Range(1, 7);
         diceValueText.text = diceValue.ToString();
-        MovePlayer(diceValue *(-1));
+        MovePlayer(diceValue * (-1));
     }
     public void RollAGoldenDice(int diceValue)
     {
@@ -91,9 +90,8 @@ public class DicePlayManager : MonoBehaviour
         if (goldenDiceNum < 1) return;
 
         goldenDiceNum--;
-        MovePlayer(diceValue* (-1));
+        MovePlayer(diceValue * (-1));
     }
-
     // 해당 눈금만큼 플레이어를 이동
     private void MovePlayer(int diceValue)
     {
@@ -106,11 +104,10 @@ public class DicePlayManager : MonoBehaviour
         if (currentTileIndex < 0)
             currentTileIndex = list_MapTile.Count + currentTileIndex;
         Vector3 target = GetTilePosition(currentTileIndex);
-
+        
         Player.instance.Move(target);
         list_MapTile[currentTileIndex].GetComponent<TileInfo>().TileEvent();
     }
-
     private void CheckPlayerPassedStarTile(int previousIndex, int currentIndex)
     {
         TileInfo_Star tmpStarTile = null;
@@ -127,9 +124,8 @@ public class DicePlayManager : MonoBehaviour
             }
         }
     }
-
     private Vector3 GetTilePosition(int tileIndex)
-    {
+    {   
         Vector3 pos = list_MapTile[tileIndex].position;
         return pos;
     }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class TileInfo_Star : TileInfo
 {
     private int _starValue;
@@ -11,6 +10,7 @@ public class TileInfo_Star : TileInfo
         set
         {
             _starValue = value;
+            starValueText.text = _starValue.ToString();
         }
         get
         {
@@ -18,7 +18,6 @@ public class TileInfo_Star : TileInfo
         }
     }
     [SerializeField] Text starValueText;
-
     private void Awake()
     {
         starValue = 3;

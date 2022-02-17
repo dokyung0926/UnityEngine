@@ -53,14 +53,14 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\02.Scripts\DicePlayManager.cs" />
     <Compile Include="Assets\02.Scripts\Player.cs" />
-    <Compile Include="Assets\02.Scripts\TileInfo.cs" />
-    <Compile Include="Assets\02.Scripts\TileInfo_Dice.cs" />
+    <Compile Include="Assets\02.Scripts\DicePlayManager.cs" />
+    <Compile Include="Assets\02.Scripts\TileInfo_Inverse.cs" />
     <Compile Include="Assets\02.Scripts\TileInfo_GoldenDice.cs" />
     <Compile Include="Assets\02.Scripts\TileInfo_Star.cs" />
-    <Compile Include="Assets\02.Scripts\TileInfo_Inverse.cs" />
+    <Compile Include="Assets\02.Scripts\TileInfo_Dice.cs" />
     <Compile Include="Assets\02.Scripts\DicePlayUI.cs" />
+    <Compile Include="Assets\02.Scripts\TileInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
