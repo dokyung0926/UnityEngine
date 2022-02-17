@@ -1,7 +1,97 @@
 fileFormatVersion: 2
 guid: 600d53fe58c46ad47b5738b4375c6846
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 137436364316955303
+    second: DiceVector_0
+  - first:
+      213: 7484023807835804777
+    second: DiceVector_1
+  - first:
+      213: -3184232062180379068
+    second: DiceVector_2
+  - first:
+      213: 830025097780125285
+    second: DiceVector_3
+  - first:
+      213: 4091772033256350338
+    second: DiceVector_4
+  - first:
+      213: 8799890942897793491
+    second: DiceVector_5
+  - first:
+      213: -8127389888232769329
+    second: DiceVector_6
+  - first:
+      213: 7022935700554621067
+    second: DiceVector_7
+  - first:
+      213: 3141144630927180855
+    second: DiceVector_8
+  - first:
+      213: -2114212980558120239
+    second: DiceVector_9
+  - first:
+      213: 2643137856205523779
+    second: DiceVector_10
+  - first:
+      213: 4329396382151139799
+    second: DiceVector_11
+  - first:
+      213: 1879414421774833401
+    second: DiceVector_12
+  - first:
+      213: -3085764956366841813
+    second: DiceVector_13
+  - first:
+      213: -7031054824456314081
+    second: DiceVector_14
+  - first:
+      213: 1598389772763739966
+    second: DiceVector_15
+  - first:
+      213: -3145958169113332693
+    second: DiceVector_16
+  - first:
+      213: -8734980539264289767
+    second: DiceVector_17
+  - first:
+      213: -8363175113640464168
+    second: DiceVector_18
+  - first:
+      213: 7956888545392150571
+    second: DiceVector_19
+  - first:
+      213: 2643997270226278518
+    second: DiceVector_20
+  - first:
+      213: 858455169116302241
+    second: DiceVector_21
+  - first:
+      213: -2925575339833045069
+    second: DiceVector_22
+  - first:
+      213: 636804219153565030
+    second: DiceVector_23
+  - first:
+      213: -749418622411007279
+    second: DiceVector_24
+  - first:
+      213: 7826274360115347017
+    second: DiceVector_25
+  - first:
+      213: 7558894241609027675
+    second: DiceVector_26
+  - first:
+      213: -2001579435595015635
+    second: DiceVector_27
+  - first:
+      213: 9149260568383220015
+    second: DiceVector_28
+  - first:
+      213: 2117681178675060524
+    second: DiceVector_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +131,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +165,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: DiceVector_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 952
+        height: 798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2555a25a548e100800000000000000
+      internalID: 137436364316955303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
