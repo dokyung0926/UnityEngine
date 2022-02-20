@@ -31,6 +31,6 @@ public class DicePlayUI : MonoBehaviour
         {
             normalDicePanel.SetActive(true);
             inverseDicePanel.SetActive(false);
-        }
+        }        
     }
 }

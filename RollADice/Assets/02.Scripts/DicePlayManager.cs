@@ -66,7 +66,7 @@ public class DicePlayManager : MonoBehaviour
     public void RollADice()
     {
         if (diceNum < 1) return;
-        if(DiceAnimationUI.instance.isAvailable == false) return;
+        if (DiceAnimationUI.instance.isAvailable == false) return;
 
         diceNum--;
         int diceValue = Random.Range(1, 7);
@@ -78,7 +78,6 @@ public class DicePlayManager : MonoBehaviour
     {
         if (diceNum < 1) return;
         if (DiceAnimationUI.instance.isAvailable == false) return;
-
         diceNum--;
         int diceValue = Random.Range(1, 7);
         diceValueText.text = diceValue.ToString();
@@ -89,7 +88,6 @@ public class DicePlayManager : MonoBehaviour
     {
         if (goldenDiceNum < 1) return;
         if (DiceAnimationUI.instance.isAvailable == false) return;
-
         goldenDiceNum--;
         DiceAnimationUI.instance.PlayDiceAnimation(diceValue);
         MovePlayer(diceValue);
@@ -98,7 +96,6 @@ public class DicePlayManager : MonoBehaviour
     {
         if (goldenDiceNum < 1) return;
         if (DiceAnimationUI.instance.isAvailable == false) return;
-
         goldenDiceNum--;
         DiceAnimationUI.instance.PlayDiceAnimation(diceValue);
         MovePlayer(diceValue * (-1));
@@ -119,7 +116,7 @@ public class DicePlayManager : MonoBehaviour
         Player.instance.Move(target);
         list_MapTile[currentTileIndex].GetComponent<TileInfo>().TileEvent();
 
-        CheckGameFinished();
+        CheckGameIsFinished();
     }
     private void CheckPlayerPassedStarTile(int previousIndex, int currentIndex)
     {
@@ -142,7 +139,7 @@ public class DicePlayManager : MonoBehaviour
         Vector3 pos = list_MapTile[tileIndex].position;
         return pos;
     }
-    private void CheckGameFinished()
+    private void CheckGameIsFinished()
     {
         int totalDiceNum = diceNum + goldenDiceNum;
         if(totalDiceNum < 1)
@@ -153,30 +150,25 @@ public class DicePlayManager : MonoBehaviour
     }
     public void ReplayGame()
     {
-
-        // 주사위 갯수 초기화
+        // 주사위갯수 초기화
         diceNum = diceNumInit;
         goldenDiceNum = goldenDiceNumInit;
-
         // 샛별칸 값 초기화
-        foreach  (Transform maptile in list_MapTile)
+        foreach (Transform maptile in list_MapTile)
         {
             TileInfo_Star tileInfo_Star = null;
             bool isExist = maptile.TryGetComponent(out tileInfo_Star);
             if (isExist)
             {
                 tileInfo_Star.starValue = 3;
-            }      
+            }
         }
-
         // 플레이어 원위치
         Player.instance.transform.position = playerStartPoint.position;
         currentTileIndex = 0;
-
         // 점수 초기화
         starScore = 0;
-
-        // 주사위 패널 초기화
+        // 주사위패널 초기화
         DicePlayUI.instance.RollBackDicePanel();
     }
 }

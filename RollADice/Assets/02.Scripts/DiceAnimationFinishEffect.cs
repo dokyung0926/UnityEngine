@@ -7,11 +7,11 @@ public class DiceAnimationFinishEffect : MonoBehaviour
     public float lastingTime;
     public float rotateSpeed;
     private float elapsedTime;
-
     private void OnEnable()
     {
         elapsedTime = 0;
     }
+    // Update is called once per frame
     void Update()
     {
         if (elapsedTime > lastingTime)
