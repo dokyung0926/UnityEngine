@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 371761998}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,7 +246,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &371761994
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -260,8 +260,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0072023557}
-  m_Size: {x: 0.13, y: 0.34440473}
+  m_Offset: {x: -0.001365954, y: -0.018129896}
+  m_Size: {x: 0.14912327, y: 0.34986845}
   m_Direction: 0
 --- !u!212 &371761995
 SpriteRenderer:
@@ -323,7 +323,7 @@ Transform:
   m_GameObject: {fileID: 371761992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -1.99, z: 0}
-  m_LocalScale: {x: 3.3011, y: 3.3011, z: 3.3011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 93572218}
   m_Father: {fileID: 0}
@@ -343,6 +343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 5
+  playerState: 0
+  jumpState: 0
 --- !u!114 &371761998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +358,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 0, y: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
   isGrounded: 0
 --- !u!1 &519420028
 GameObject:
@@ -410,7 +415,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -434,7 +439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -1.98, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -499,7 +504,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.49056602, g: 0.46511212, b: 0.46511212, a: 1}
+  m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

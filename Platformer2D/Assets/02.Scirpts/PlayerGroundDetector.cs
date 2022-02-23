@@ -9,6 +9,8 @@ public class PlayerGroundDetector : MonoBehaviour
     Vector2 center;
     public Vector2 size;
 
+    public LayerMask groundLayer;
+
     // 다른 클래스에서는 접근을 해야하지만 Inspector창에서는 숨기고 싶을 때 [HideInInspector]
     [HideInInspector] public bool isGrounded;
     private void Awake()
@@ -21,8 +23,8 @@ public class PlayerGroundDetector : MonoBehaviour
     void Update()
     {
         center.x = rb.position.x + col.offset.x;
-        center.y = rb.position.y - col.offset.y - col.size.y / 2 - size.y;
-       isGrounded = Physics2D.OverlapBox(center, size, 0);
+        center.y = rb.position.y + col.offset.y - col.size.y / 2 - size.y * 2;
+        isGrounded = Physics2D.OverlapBox(center, size, 0, groundLayer);
     }
     private void OnDrawGizmosSelected()
     {
