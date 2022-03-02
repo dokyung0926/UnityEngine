@@ -129,12 +129,12 @@ public class PlayerController : MonoBehaviour
         // 점프하는 순간 등 의 경우에 순간적으로 속도가 바뀌어야 할때 
         // 또는 특정 동작에서 다른 동작으로 넘어가는 순간 속도를 재설정 해야할때 직접수정.
         
-        if (playerState != PlayerState.Jump && Input.GetKeyDown(KeyCode.LeftAlt))
+        if (playerState != PlayerState.Jump && Input.GetKeyDown(KeyCode.D))
         {
             ChangePlayerState(PlayerState.Jump);
         }
 
-        if (playerState != PlayerState.Dash && Input.GetKeyDown(KeyCode.LeftShift))
+        if (playerState != PlayerState.Dash && Input.GetKeyDown(KeyCode.S))
         {
             ChangePlayerState(PlayerState.Dash);
         }
@@ -306,7 +306,7 @@ public class PlayerController : MonoBehaviour
                 dashState = DashState.Dashing;
                 break;
             case DashState.Dashing:
-                if(animationTimeElapsed < dashTime * 3/4)
+                if (animationTimeElapsed < dashTime * 2 / 4) 
                 {
                     move.x = direction * moveSpeed * 1.5f;
                 }
