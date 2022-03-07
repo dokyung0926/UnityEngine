@@ -1,8 +1,0 @@
-Attack 동작구현 
-
-
-1. Attack FSM 구상해서 FlowChart 그리기.
-2. FlowChart 바탕으로 Attack FSM을 위한 enum Type 정의
-3. PlayerState에 Attack 상태 추가
-4. PlayerState가 Attack일때 실행할 함수들 정의
-5. Attack 애니메이션 제작 , Attack 시 애니메이션 실행
