@@ -1274,19 +1274,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdec153a58622447b88470e8373037c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolElements:
-  - tag: Sphere
-    prefab: {fileID: 7578497059977869896, guid: 1c0a8d657b9c6c84baa9332cfca071d5, type: 3}
-    size: 3
-  - tag: Cube
-    prefab: {fileID: 5768160959298878162, guid: 7f8680bb3a2e4fc4fbab16f58484a9f2, type: 3}
-    size: 2
-  - tag: Enemy
-    prefab: {fileID: 6878010247177327219, guid: b5f743092797c9345b47b59768796521, type: 3}
-    size: 6
-  enemyPrefab: {fileID: 6878010247177327219, guid: b5f743092797c9345b47b59768796521, type: 3}
-  spawnNum: 20
-  spawnTimeGap: 1
+  spawnElements:
+  - poolElement:
+      tag: Cube
+      prefab: {fileID: 5768160959298878162, guid: 7f8680bb3a2e4fc4fbab16f58484a9f2, type: 3}
+      size: 5
+    spawnTimeGap: 2
+  - poolElement:
+      tag: Sphere
+      prefab: {fileID: 7578497059977869896, guid: 1c0a8d657b9c6c84baa9332cfca071d5, type: 3}
+      size: 10
+    spawnTimeGap: 1
 --- !u!4 &261648781
 Transform:
   m_ObjectHideFlags: 0

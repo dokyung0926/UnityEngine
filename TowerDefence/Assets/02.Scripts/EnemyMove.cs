@@ -19,6 +19,11 @@ public class EnemyMove : MonoBehaviour
     {
         nextWayPoint = WayPoints.points[0];
     }
+
+    private void OnDisable()
+    {
+        ObjectPool.ReturnToPool(gameObject);
+    }
     private void FixedUpdate()
     {
         Vector3 targetPos = new Vector3(nextWayPoint.position.x, originPosY, nextWayPoint.position.z);
@@ -39,6 +44,6 @@ public class EnemyMove : MonoBehaviour
     }
     private void OnReachedToEnd()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
