@@ -7,8 +7,8 @@ public class EnemyMove : MonoBehaviour
     Transform tr;
 
     public int wayPointIndex;
-    public float speed = 0.2f;
-    Transform nextWayPoint;
+    public float speed = 1f;
+    public Transform nextWayPoint;
     float originPosY;
     private void Awake()
     {
@@ -24,6 +24,7 @@ public class EnemyMove : MonoBehaviour
     {
         ObjectPool.ReturnToPool(gameObject);
     }
+
     private void FixedUpdate()
     {
         Vector3 targetPos = new Vector3(nextWayPoint.position.x, originPosY, nextWayPoint.position.z);
@@ -33,7 +34,7 @@ public class EnemyMove : MonoBehaviour
             if (WayPoints.TryGetNextWayPoint(wayPointIndex, out nextWayPoint))
             {
                 wayPointIndex++;
-            }
+            }   
             else
             {
                 OnReachedToEnd();
@@ -46,4 +47,5 @@ public class EnemyMove : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    
 }

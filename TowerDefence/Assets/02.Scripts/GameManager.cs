@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        if (instance == null)
+        if(instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public static void LoadSceneByName(string sceneName)
     {
-        Scene targetScene = SceneManager.GetSceneByName(sceneName);
+        Scene targetScene = SceneManager.GetSceneByName(sceneName);        
         if (targetScene.IsValid())
         {
             SceneManager.LoadScene(sceneName);
@@ -26,12 +26,12 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Can't find scene of {sceneName}");
             return;
         }
-
+        
     }
 
 }
 public enum GameState
-{
+{    
     Idle,
     SelectLevel,
     StartLevel,

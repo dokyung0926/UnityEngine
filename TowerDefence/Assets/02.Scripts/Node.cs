@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public Color originColor;
+    private Color originColor;
     public Color buildAvailableColor;
     public Color buildNotAvailableColor;
 
     Renderer rend;
     private void Awake()
     {
-        rend = GetComponent<Renderer>();  
+        rend = GetComponent<Renderer>();
         originColor = rend.material.color;
     }
     private void OnMouseEnter()
