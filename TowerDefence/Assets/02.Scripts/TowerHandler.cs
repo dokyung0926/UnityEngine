@@ -11,6 +11,8 @@ public class TowerHandler : MonoBehaviour, IPointerClickHandler
     {
         towerPreviewObject.transform.position = position;
     }
+
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if(TowerViewPresenter.instance.isSelected == false)
