@@ -31,7 +31,7 @@ public class ObjectPool : MonoBehaviour
     }
     IEnumerator E_Start()
     {
-        yield return new WaitUntil(() => TowerAssets.Instance != null);
+        yield return new WaitUntil(() => TowerAssets.instance != null);
         foreach (PoolElement poolElement in poolElements)
         {
             Debug.Log($"pool element registered : {poolElement.tag}");
