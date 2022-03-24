@@ -9,6 +9,6 @@ public class TowerHandler : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-            TowerViewPresenter.instance.SetTowerHandler(this);
+        TowerViewPresenter.instance.SetTowerHandler(this);
     }
 }

@@ -13,7 +13,7 @@ public class TowerAssets : MonoBehaviour
             {
                 _instance = Instantiate(Resources.Load<TowerAssets>("TowerAssets"));
                 _instance.RegisterAllTowerToObjectPool();
-            }
+            }   
             return _instance;
         }
     }
@@ -35,15 +35,17 @@ public class TowerAssets : MonoBehaviour
 
     public bool TryGetTowerName(TowerType type, int level, out string towerName)
     {
-      towerName = towers.Find(x => x.GetComponent<Tower>().info.type == type &&
-                                                x.GetComponent<Tower>().info.level == level).name;
-        return towerName.Length > 1 ? true : false;
+        towerName = null;
+        if(level < 4)
+        {
+            towerName = towers.Find(x => x.name == type.ToString() + level.ToString()).name;
+        }
+        return towerName != string.Empty ? true : false;
     }
 
-    public bool TryGetTowerInfoByName(string towerName, out TowerInfo towerInfo)
+    public bool TryGetTowerByName(string towerName, out Tower tower)
     {
-        towerInfo = towers.Find(x => x.name == towerName).GetComponent<Tower>().info;
-        return towerInfo != null ? true : false;    
+        tower = towers.Find(x => x.name == towerName).GetComponent<Tower>();
+        return tower != null ? true : false;
     }
 }
-
