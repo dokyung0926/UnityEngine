@@ -35,7 +35,7 @@ public class TowerAssets : MonoBehaviour
 
     public bool TryGetTowerName(TowerType type, int level, out string towerName)
     {
-        towerName = null;
+        towerName = string.Empty;
         if(level < 4)
         {
             towerName = towers.Find(x => x.name == type.ToString() + level.ToString()).name;

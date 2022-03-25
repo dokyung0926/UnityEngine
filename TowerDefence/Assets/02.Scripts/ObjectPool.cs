@@ -40,6 +40,7 @@ public class ObjectPool : MonoBehaviour
             {
                 GameObject obj = CreateNewObject(poolElement.tag, poolElement.prefab);
                 ArrangePool(obj);
+                yield return null;
             }
         }
 
@@ -47,6 +48,11 @@ public class ObjectPool : MonoBehaviour
 
     public static void ReturnToPool(GameObject obj)
     {
+        foreach (var item in instance.spawnedQueueDictionrary)
+        {
+            Debug.Log($"{item.Key} is exist on poo");
+        }
+
         if (!instance.spawnedQueueDictionrary.ContainsKey(obj.name))
             throw new Exception($"Pool doesn't include {obj.name}");
         instance.spawnedQueueDictionrary[obj.name].Enqueue(obj);
@@ -79,7 +85,9 @@ public class ObjectPool : MonoBehaviour
             var obj = CreateNewObject(poolElement.tag, poolElement.prefab);
             ArrangePool(obj);
         }
+        Debug.Log(tag);
         GameObject objectToSpawn = queue.Dequeue();
+        
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = Quaternion.identity;
         objectToSpawn.SetActive(true);

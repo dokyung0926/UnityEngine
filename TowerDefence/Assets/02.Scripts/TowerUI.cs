@@ -29,6 +29,7 @@ public class TowerUI : MonoBehaviour
         {
             node.BuildTowerHere(towerName);
         }
+        
     }
 
     public void OnSellButton()

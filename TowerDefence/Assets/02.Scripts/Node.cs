@@ -72,21 +72,25 @@ public class Node : MonoBehaviour
         {
             TowerViewPresenter.instance.SetTowerHandler(null);
         }
+        
     }
 
     public void BuildTowerHere(string towerName)
     {
-        // 이미 타워가 존재하고 있다면
-        if(tower != null)
+        // when tower already exist
+        if( tower != null)
         {
             tower.gameObject.SetActive(false);
         }
 
-        GameObject towerGameobject = ObjectPool.SpawnFromPool(towerName, transform.position
-                                                                                                            + new Vector3(0, col.size.y / 2, 0));
+        Debug.Log($"build tower {towerName} here");
 
-        tower = towerGameobject.GetComponent<Tower>();
+        GameObject towerGameObject = ObjectPool.SpawnFromPool(towerName,
+                                     transform.position + new Vector3(0, col.size.y / 2, 0));
+
+        tower = towerGameObject.GetComponent<Tower>();
     }
+
     public void DestroyTowerHere()
     {
         tower.gameObject.SetActive(false);
