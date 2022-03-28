@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2464152741985607022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4424592868363509665}
+  m_Layer: 15
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4424592868363509665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464152741985607022}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0145375775, y: -0.045, z: 0.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2025463667468546252}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9172565223392121572
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7053426511839328223}
   - component: {fileID: 6580775914421722613}
-  m_Layer: 0
+  - component: {fileID: 8608293614987706269}
+  m_Layer: 15
   m_Name: Laser1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +59,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 6972056069591845359}
   - {fileID: 2025463667468546252}
+  - {fileID: 6972056069591845359}
+  - {fileID: 1688334451382130519}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,6 +83,29 @@ MonoBehaviour:
     m_Bits: 1048576
   detectRange: 2
   turretRotatePoint: {fileID: 2025463667468546252}
+  target: {fileID: 0}
+--- !u!114 &8608293614987706269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172565223392121572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928680ac2f4edc54ea961298cd8b5d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: daa17882b5e82574c8c4e5929dfec400, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1048576
+  detectRange: 2
+  turretRotatePoint: {fileID: 2025463667468546252}
+  target: {fileID: 0}
+  lineRenderer: {fileID: 7223848812751721989, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+  firePoint: {fileID: 4424592868363509665}
+  hitEffect: {fileID: 1425597461900390843, guid: 95839b0e203f97a4488d300e73b16982, type: 3}
 --- !u!1001 &2025463667468413516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,9 +117,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserTower_TURRET_L01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d158cd1ed36df4fed93c13f4cbf91f99, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d158cd1ed36df4fed93c13f4cbf91f99, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d158cd1ed36df4fed93c13f4cbf91f99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117,6 +176,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d158cd1ed36df4fed93c13f4cbf91f99, type: 3}
   m_PrefabInstance: {fileID: 2025463667468413516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5946830124358822547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7053426511839328223}
+    m_Modifications:
+    - target: {fileID: 4870023987480516805, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_Name
+      value: LaserBeam1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.063193
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9369392
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.46734
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223848812751721989, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e00d72c91e955f4481c03d58e6da237, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+--- !u!4 &1688334451382130519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5037638199721098692, guid: bcb68344546f0a04487fbfe9b99e7144, type: 3}
+  m_PrefabInstance: {fileID: 5946830124358822547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6972056069592241007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,13 +253,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserTower_BASE_L01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}
       propertyPath: m_LocalPosition.y

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7053426511839328223}
   - component: {fileID: 5898846187591077399}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: MachineGun3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,7 @@ MonoBehaviour:
   target: {fileID: 0}
   damage: 20
   reloadTime: 0.6
+  reloadTimer: 0
 --- !u!1001 &4871105789488472283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,6 +65,10 @@ PrefabInstance:
     - target: {fileID: 100018, guid: 7b4f0cb8fc3314059b88194196134996, type: 3}
       propertyPath: m_Name
       value: Turret_MachineGun_L03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 7b4f0cb8fc3314059b88194196134996, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 7b4f0cb8fc3314059b88194196134996, type: 3}
       propertyPath: m_RootOrder
@@ -130,6 +135,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: dca1d127a63854ace99cfd10bf9916cd, type: 3}
       propertyPath: m_Name
       value: Base_MachineGun_L03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dca1d127a63854ace99cfd10bf9916cd, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dca1d127a63854ace99cfd10bf9916cd, type: 3}
       propertyPath: m_RootOrder

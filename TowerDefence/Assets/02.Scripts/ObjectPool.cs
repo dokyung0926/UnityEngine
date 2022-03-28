@@ -48,11 +48,6 @@ public class ObjectPool : MonoBehaviour
 
     public static void ReturnToPool(GameObject obj)
     {
-        foreach (var item in instance.spawnedQueueDictionrary)
-        {
-            Debug.Log($"{item.Key} is exist on poo");
-        }
-
         if (!instance.spawnedQueueDictionrary.ContainsKey(obj.name))
             throw new Exception($"Pool doesn't include {obj.name}");
         instance.spawnedQueueDictionrary[obj.name].Enqueue(obj);
