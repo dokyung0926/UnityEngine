@@ -66,10 +66,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base_MachineGun_L02
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: eef9d1528875a43edb151eb2f6326ff4, type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eef9d1528875a43edb151eb2f6326ff4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -135,10 +131,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b29d7ff11c99340e38246a09f771946f, type: 3}
       propertyPath: m_Name
       value: Turret_MachineGun_L02
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: b29d7ff11c99340e38246a09f771946f, type: 3}
-      propertyPath: m_Layer
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b29d7ff11c99340e38246a09f771946f, type: 3}
       propertyPath: m_RootOrder

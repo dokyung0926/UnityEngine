@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             string tmpTag = spawnElements[i].poolElement.tag;
             int num = ObjectPool.GetSpawnedObjectNumber(tmpTag);
 
-            if (spawnCounts[i] < spawnElements[i].poolElement.size) { 
+            if (spawnCounts[i] < spawnElements[i].poolElement.size){
 
                 if (num < spawnElements[i].poolElement.size)
                 {
@@ -48,7 +48,8 @@ public class EnemySpawner : MonoBehaviour
                         spawnTimer[i] -= Time.deltaTime;
                 }
             }
-        }       
+        }
+        
     }
     
     private void Spawn(string tag)

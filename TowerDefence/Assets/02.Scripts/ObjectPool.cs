@@ -80,9 +80,7 @@ public class ObjectPool : MonoBehaviour
             var obj = CreateNewObject(poolElement.tag, poolElement.prefab);
             ArrangePool(obj);
         }
-        Debug.Log(tag);
         GameObject objectToSpawn = queue.Dequeue();
-        
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = Quaternion.identity;
         objectToSpawn.SetActive(true);

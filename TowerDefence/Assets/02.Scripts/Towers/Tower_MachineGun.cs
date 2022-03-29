@@ -24,7 +24,6 @@ public class Tower_MachineGun : Tower
 
     private void Attack()
     {
-        Debug.Log("Machinegun : Attack!");
         target.GetComponent<Enemy>().hp -= damage;
     }
 }

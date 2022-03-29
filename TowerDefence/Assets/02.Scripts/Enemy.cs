@@ -27,10 +27,9 @@ public class Enemy : MonoBehaviour
     {
         hp = hpMax;
     }
+
     private void OnDisable()
     {
-        Debug.Log($"enemy disabled {this.name}");
         ObjectPool.ReturnToPool(gameObject);
     }
-
 }
