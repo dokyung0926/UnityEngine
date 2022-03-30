@@ -18,9 +18,9 @@ public class Buff_Slow : Buff
     public override bool OnDuration(Enemy target)
     {
         float tmpSpeed = targetSpeedOrigin * (1f - slowPercent / 100);
-        if (enemyMove != null &&
-            enemyMove.speed > tmpSpeed)
-            enemyMove.speed = tmpSpeed;
+        if(enemyMove != null &&
+           enemyMove.speed > tmpSpeed)
+          enemyMove.speed = tmpSpeed;
 
         return doBuff;
     }
@@ -28,7 +28,7 @@ public class Buff_Slow : Buff
     public override void OnDeactive(Enemy target)
     {
         base.OnDeactive(target);
-        if (enemyMove != null)
+        if(enemyMove != null)
             enemyMove.speed = targetSpeedOrigin;
     }
 }

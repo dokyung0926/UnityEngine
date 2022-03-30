@@ -21,7 +21,7 @@ public class Tower_Laser : Tower
     }
     private void Laser()
     {
-        if (targetEnemy == null)
+        if (target == null)
         {
             lineRenderer.enabled = false;
 
@@ -34,7 +34,7 @@ public class Tower_Laser : Tower
         }
         else
         {
-            if (targetEnemy != target.GetComponent<Enemy>())
+            if(targetEnemy != target.GetComponent<Enemy>())
             {
                 buffSlow.OnDeactive(targetEnemy);
                 buffSlow.doBuff = true;
@@ -42,8 +42,7 @@ public class Tower_Laser : Tower
                 targetEnemy = target.GetComponent<Enemy>();
                 elapsedLaserTime = 0;
                 damageStep = 0;
-
-            }  
+            }   
 
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
@@ -77,9 +76,5 @@ public class Tower_Laser : Tower
         }
     }
 
-    enum DamageStep
-    {
-
-    }
 
 }
