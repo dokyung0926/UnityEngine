@@ -6,13 +6,13 @@ public class PlayerStateMachine : MonoBehaviour
     public State state;
     public PlayerState playerState;
     public KeyCode keyCode;
-    public GroundDetector groundDetector;
     [HideInInspector] public Animator animator;
     [HideInInspector] public PlayerStateMachineManager manager;
 
+
     public virtual void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         manager = GetComponent<PlayerStateMachineManager>();
     }
 
