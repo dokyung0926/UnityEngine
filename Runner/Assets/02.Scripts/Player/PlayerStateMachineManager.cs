@@ -6,6 +6,7 @@ public class PlayerStateMachineManager : MonoBehaviour
     public PlayerState state;
     PlayerStateMachine[] playerStateMachines;
     PlayerStateMachine currentMachine;
+    PlayerStateMachine wallRunMachine;
     KeyCode keyInput;
 
     PlayerPos _playerPos;
@@ -29,7 +30,7 @@ public class PlayerStateMachineManager : MonoBehaviour
                     }
                     break;
                 case PlayerPos.Center:
-                    // do active skill
+                    // do active skill ? 
                     break;
                 case PlayerPos.Right:
                     switch (_playerPos)
@@ -63,12 +64,14 @@ public class PlayerStateMachineManager : MonoBehaviour
 
     private void Awake()
     {
+        tr = transform;
         playerStateMachines = GetComponents<PlayerStateMachine>();
         foreach (var playerStateMachine in playerStateMachines)
         {
             if (playerStateMachine.playerState == PlayerState.Idle)
                 currentMachine = playerStateMachine;
-        }   
+        }
+        wallRunMachine = GetComponent<PlayerStateMachine_WallRun>();
     }
 
     private void Update()
@@ -102,23 +105,34 @@ public class PlayerStateMachineManager : MonoBehaviour
     /// </summary>
     private void CompareKeyInput()
     {
-        if (keyInput == KeyCode.LeftArrow)
-            playerPos = PlayerPos.Left;
-        else if (keyInput == KeyCode.RightArrow)
-            playerPos = PlayerPos.Right;
-        foreach (var machine in playerStateMachines)
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (keyInput != KeyCode.None &&
-                keyInput == machine.keyCode)
+            if (wallRunMachine.IsExecuteOK())
+                currentMachine = wallRunMachine;
+            else
+                playerPos = PlayerPos.Left;
+        }         
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            playerPos = PlayerPos.Right;
+        }
+        else
+        {
+            foreach (var machine in playerStateMachines)
             {
-                if (machine.IsExecuteOK())
+                if (keyInput != KeyCode.None &&
+                    keyInput == machine.keyCode)
                 {
-                    machine.Execute();
-                    currentMachine = machine;
-                    state = machine.playerState;
-                }   
-                keyInput = KeyCode.None;
-                break;
+                    Debug.Log($"{machine}, {machine.IsExecuteOK()}");
+                    if (machine.IsExecuteOK())
+                    {
+                        machine.Execute();
+                        currentMachine = machine;
+                        state = machine.playerState;
+                    }
+                    keyInput = KeyCode.None;
+                    break;
+                }
             }
         }
     }
@@ -184,5 +198,5 @@ public enum PlayerPos
 {
     Left,
     Center,
-    Right,
+    Right,    
 }

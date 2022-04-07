@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: d13b2e8944d60504285d5695ce31f491
+guid: 0f124c5bb319b8842ae7179ca6d75cb3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Wall Run
+    second: WallRunFinish
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wall Run
+      name: WallRunFinish
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 9
-      lastFrame: 19
+      firstFrame: 17
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

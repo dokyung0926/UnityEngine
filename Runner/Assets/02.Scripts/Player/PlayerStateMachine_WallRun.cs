@@ -24,18 +24,14 @@ public class PlayerStateMachine_WallRun : PlayerStateMachine
             else if (ac.animationClips[i].name == "WallRunFinish")
                 animationTime_Finish = ac.animationClips[i].length;
         }
-
-
-
-
     }
     public override bool IsExecuteOK()
     {
         bool isOK = false;
-        if (wallDetector.isDetected &&
-          (manager.state == PlayerState.Run ||
-           manager.state == PlayerState.Jump ||
-           manager.state == PlayerState.Fall)) 
+        if(wallDetector.isDetected &&
+           (manager.state == PlayerState.Run ||
+            manager.state == PlayerState.Jump||
+            manager.state == PlayerState.Fall ))
             isOK = true;
         return isOK;
     }
